@@ -1,0 +1,15 @@
+services:
+  test-kong-oauth:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7788:7788"
+    networks:
+      - kong-poc_kong-network
+
+networks:
+  kong-poc_kong-network:
+    external: true
+    driver: bridge
+    name: kong-poc_kong-network
